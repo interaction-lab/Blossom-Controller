@@ -18,11 +18,10 @@ class BlossomNetworkInterface:
 
         self.url = f"http://{self.server_ip}:{self.server_port}/data"
         self.data = {
-            "function": "do_start_sequence",
+            "function": "do_sequence",
             "kwargs": {
                 "blossom_id": 0,
                 "delay_time": 0.5,
-                "audio_length": 20,
                 "seq": "reset"
             }
         }
