@@ -5,12 +5,13 @@
 # the original sequence directory
 import json
 
-sequence_dir = "./blossom-public/blossompy/src/sequences/woody/"
+# sequence_dir = "./blossom-public/blossompy/src/sequences/woody/"
 
-output_sequence_dir = "./blossom-public/blossompy/src/sequences/woody/cognitive/"
+# output_sequence_dir = "./blossom-public/blossompy/src/sequences/woody/cognitive/"
 
 
-def combine_sequences(sequences: list, sequence_name=None):
+def combine_sequences(sequences: list, sequence_name=None, sequence_dir="./blossom-public/blossompy/src/sequences/woody/", output_sequence_dir = "./blossom-public/blossompy/src/sequences/woody/cognitive/"):
+    print("Check input/output path if encountered error.")
     output_sequence = {
         "animation": "",
         "frame_list": []
