@@ -5,15 +5,25 @@ import sys
 import time
 import logging
 
-sys.path.append("./blossom-public")
+import sys
+from pathlib import Path
+
+HERE   = Path(__file__).resolve().parent
+Bl_PATH = (HERE / "blossom-public").resolve()
+
+if str(Bl_PATH) not in sys.path:
+    sys.path.insert(0, str(Bl_PATH))
+
 from blossompy import Blossom
+
+SEQ_DIR = Bl_PATH / "blossompy" / "src" / "sequences"
 
 logger = logging.getLogger(__name__)
 
 
 class BlossomLocalInterface:
     def __init__(self):
-        self.bl = Blossom(sequence_dir='./blossom-public/blossompy/src/sequences')
+        self.bl = Blossom(sequence_dir=SEQ_DIR)
         self.bl.connect()  # safe init and connects to blossom and puts blossom in reset position
         self.bl.load_sequences()
         self.bl.do_sequence("reset")
